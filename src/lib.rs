@@ -1,4 +1,4 @@
-#[derive(Default, Debug)]
+#[derive(Default)]
 pub struct RingBuffer<T, const CAPACITY: usize>
 where
     [Option<T>; CAPACITY]: Default,
@@ -12,7 +12,7 @@ where
 impl<T, const CAPACITY: usize> RingBuffer<T, CAPACITY>
 where
     [Option<T>; CAPACITY]: Default,
-    T: Default + std::fmt::Debug,
+    T: Default,
 {
     pub fn new() -> Self {
         Self::default()
